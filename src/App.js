@@ -1,9 +1,6 @@
+import Home from "./components/Home";
 function App() {
-  return (
-    <div>
-      <p>This is nice empty page!</p>
-    </div>
-  );
+  return <Home />;
 }
 
 export default App;

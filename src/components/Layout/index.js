@@ -6,7 +6,9 @@ function Layout({ children }) {
   return (
     <>
       <Navbar />
-      <Container>{children}</Container>
+      <Container textAlign="center" fluid>
+        {children}
+      </Container>
     </>
   );
 }
