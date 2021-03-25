@@ -2,12 +2,12 @@ import React from "react";
 
 import { Header } from "semantic-ui-react";
 
-function heading() {
+function Heading({ header }) {
   return (
     <>
-      <Header as="h1">Извършва се ъпдейт!</Header>
+      <Header as="h1">{header}</Header>
     </>
   );
 }
 
-export default heading;
+export default Heading;
