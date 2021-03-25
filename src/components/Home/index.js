@@ -8,10 +8,10 @@ import MainBody from "./MainBody";
 function Home() {
   const [header, setHeader] = useState(null);
   const [body, setBody] = useState(null);
-  const [tasks, setTasks] = useState([]);
+  //const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
-    axios.get(`${process.env.REACT_API_URL}/api/config/`).then(({ data }) => {
+    axios.get(`${process.env.REACT_APP_API_URL}/api/config/`).then(({ data }) => {
       const { title, description } = data;
       setHeader(title ? title : "Профилактика");
       setBody(
@@ -19,9 +19,9 @@ function Home() {
       );
     });
 
-    axios.get(`${process.env.REACT_API_URL}/api/task/`).then(({ data }) => {
-      setTasks(data);
-    });
+    //axios.get(`${process.env.REACT_API_URL}/api/task/`).then(({ data }) => {
+    //  setTasks(data);
+    //});
   }, []);
 
   return (
