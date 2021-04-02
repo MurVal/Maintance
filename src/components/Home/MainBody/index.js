@@ -1,10 +1,22 @@
 import React from "react";
 import { Message, Icon } from "semantic-ui-react";
+import styled from "styled-components";
 
-function Body({ body,status }) {
+const Container = styled.div`
+  margin: 0 25%;
+  @media only screen and (max-width: 600px) {
+    margin: 0 5%;
+  }
+`;
+
+function Body({ body, status }) {
   return (
-    <>
-      <Message negative={status==="TODO"} warning={status==="PROBLEM"} positive={status==="DONE"} icon size="big">
+    <Container>
+      <Message
+        negative={status === "PROBLEM"}
+        warning={status === "TODO"}
+        positive={status === "DOING"}
+        success={status === "DONE"}>
         <Icon.Group size="big">
           <Icon loading size="huge" name="circle notch" />
           <Icon name="cogs" loading />
@@ -12,7 +24,7 @@ function Body({ body,status }) {
         <Message.Content
           dangerouslySetInnerHTML={{ __html: body }}></Message.Content>
       </Message>
-    </>
+    </Container>
   );
 }
 
